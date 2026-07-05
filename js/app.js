@@ -53,7 +53,11 @@
   // Lue käyttäjän vastaus numeroksi (hyväksy pilkku desimaalierottimena, poista välit).
   window.parseNum = function (str) {
     if (str == null) return NaN;
-    return parseFloat(String(str).trim().replace(/\s+/g, "").replace(",", "."));
+    return parseFloat(String(str).trim()
+      .replace(/\s+/g, "")
+      .replace(/[−–‒]/g, "-") // unicode-miinus / ajatusviiva → tavallinen miinus
+      .replace("+", "")
+      .replace(",", "."));
   };
 
   window.randInt = function (lo, hi) { return lo + Math.floor(Math.random() * (hi - lo + 1)); };
