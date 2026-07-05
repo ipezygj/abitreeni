@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abitreeni — pitkä matikka + kemia</title>
+  <meta name="description" content="Interaktiivinen harjoitussivusto YO-kokeisiin: pitkä matematiikka ja kemia yhdistettynä käytännön esimerkein.">
+
+  <!-- KaTeX: kaavojen renderöinti -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <!-- Plotly (basic-bundle, ~1 MB): interaktiiviset kuvaajat -->
+  <script src="https://cdn.plot.ly/plotly-basic-2.35.2.min.js" charset="utf-8"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="navToggle" class="nav-toggle" aria-label="Valikko">☰</button>
+    <a class="brand" href="#/">📈 Abitreeni <span>· matikka + kemia</span></a>
+    <button id="themeToggle" class="theme-toggle" aria-label="Vaihda teema" title="Vaihda teema">🌓</button>
+  </header>
+
+  <div class="layout">
+    <nav id="sidebar" class="sidebar" aria-label="Aiheet"><!-- app.js täyttää --></nav>
+    <main id="content" class="content"><!-- app.js täyttää --></main>
+  </div>
+
+  <!-- Aihe-moduulit rekisteröityvät window.TOPICS:iin. Lisää uusi aihe: kopioi js/topics/_MALLI.js
+       ja lisää sille <script>-rivi tähän ENNEN app.js:ää. -->
+  <script src="js/topics/funktiot.js"></script>
+  <script src="js/topics/derivaatta-reaktionopeus.js"></script>
+  <script src="js/topics/titraus.js"></script>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
